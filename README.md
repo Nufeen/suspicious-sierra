@@ -45,7 +45,7 @@ _Location Services can be turned off in System Settings (and is actually recomme
 
 A captive portal is a network that forces an HTTP client to see a special web page (usually for authentication purposes) before using the Internet normally. A captive portal turns a Web browser into an authentication device. These are commonly used on wifi networks where authentication to the private network is done via a login browser page, rather than via the use of a WEP or WPA2 key, for example in some coffee shops and airports
 
-On Apple devices, if a captive portal is identified, a special application in /System/Library/CoreServices called Captive Network Assistant.app is opened. This is a very limited browser, separate to Safari, with no address bar or navigation buttons
+On Apple devices, if a captive portal is identified, a special application in `/System/Library/CoreServices` called `Captive Network Assistant.app` is opened. This is a very limited browser, separate to Safari, with no address bar or navigation buttons
 
 https://grpugh.wordpress.com/2014/10/29/an-undocumented-change-to-captive-network-assistant-settings-in-os-x-10-10-yosemite/
 
@@ -58,11 +58,11 @@ _Pretty nice example of how the things are messed up nowadays. I disabled it on 
 
 _Looks like for now nobody is sure what it is:_
 
-ckkeyrolld is the system daemon that rolls and verifies encryption metadata
+`ckkeyrolld` is the system daemon that rolls and verifies encryption metadata
 
 No clue about what these metadata really are and why they need to be shared with Apple
 
-ckkeyrolld.plist is related to iCloud encryption I believe.
+`ckkeyrolld.plist` is related to iCloud encryption I believe.
 
 https://www.reddit.com/r/MacOS/comments/7au0tv/what_is_ckkeyrolld/
 https://twitter.com/icleus/status/943087366436282370
