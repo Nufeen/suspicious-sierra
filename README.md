@@ -7,7 +7,7 @@ This document covers only recent network activity, for the detailed Mac OS secur
 
 ## `akd/gsa`
 
-akd is part of the AuthKit (authentication/authorisation) framework. Also used in the process of authenticating of iCloud and other accounts using Apple ID.
+`akd` is part of the AuthKit (authentication/authorisation) framework. Also used in the process of authenticating of iCloud and other accounts using Apple ID.
 
 It is used to authenticate the App Store. App Store login fails if you block it.
 
@@ -23,6 +23,7 @@ Location Services allows applications and websites to gather and use information
 Your approximate location is determined using information from local Wi-Fi networks, and is collected by Location Services in a manner that doesn’t personally identify you.
 
 https://support.apple.com/en-us/HT204690
+
 https://support.apple.com/en-gb/HT207092
 
 _The part of Location services. Related to weather, timezones and so on. Can be disabled on desktops. The only real use of them is Find My Mac functionality on macbooks._
@@ -34,7 +35,7 @@ It looks like this service is entirely related to Location Services. Blocking it
 
 https://discussions.apple.com/thread/7353115
 
-Locationd is a daemon that provides location services for OS X's "Core Location". This uses skyhook technology to figure out your mac's location (using WiFi). It's the same system used by the iPod Touch, and is also used by the iPhone (The iPhone also uses cell tower triangulation and GPS)
+`Locationd` is a daemon that provides location services for OS X's "Core Location". This uses skyhook technology to figure out your mac's location (using WiFi). It's the same system used by the iPod Touch, and is also used by the iPhone (The iPhone also uses cell tower triangulation and GPS)
 
 https://discussions.apple.com/thread/2141988
 
@@ -65,6 +66,7 @@ No clue about what these metadata really are and why they need to be shared with
 `ckkeyrolld.plist` is related to iCloud encryption I believe.
 
 https://www.reddit.com/r/MacOS/comments/7au0tv/what_is_ckkeyrolld/
+
 https://twitter.com/icleus/status/943087366436282370
 
 _Soundes like a creepy crap to be disabled. At least if you are not using iCloud (I do not)_
@@ -78,4 +80,4 @@ Google is constantly updating this database, so your iDevice refreshes on every 
 
 https://apple.stackexchange.com/questions/101556/what-is-safari-safe-browsing-data-and-why-does-it-need-to-copy-every-time-i-sync
 
-_Suspicios is that mac os sometimes calls the service while safari is off. But overall it is a useful one._
+_Suspicious is that MAC OS sometimes calls the service while Safari is off. But overall it is a useful one._
