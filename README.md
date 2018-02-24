@@ -56,9 +56,13 @@ _Pretty nice example of how the things are messed up nowadays. I disabled it on 
 
 ## `ckkeyrolld`
 
--- ckkeyrolld is the system daemon that rolls and verifies encryption metadata
--- No clue about what these metadata really are and why they need to be shared with Apple
--- ckkeyrolld.plist is related to iCloud encryption I believe.
+_Looks like for now nobody is sure what it is:_
+
+ckkeyrolld is the system daemon that rolls and verifies encryption metadata
+
+No clue about what these metadata really are and why they need to be shared with Apple
+
+ckkeyrolld.plist is related to iCloud encryption I believe.
 
 https://www.reddit.com/r/MacOS/comments/7au0tv/what_is_ckkeyrolld/
 https://twitter.com/icleus/status/943087366436282370
