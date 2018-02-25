@@ -1,6 +1,6 @@
 # SUSPICIOUS SIERRA CONNECTIONS
 
-This is a tiny investigation of suspisious Mac OS Sierra connections reported by Little Snitch, each section consists of quotes from the discussions in corresponding links. My own comments are marked with _italic_
+This is a tiny investigation of suspisious Mac OS Sierra connections reported by Little Snitch, each section consists of quotes from the discussions in corresponding links. My own comments are marked with _italic_.
 
 This document covers only recent network activity, for the detailed Mac OS security guide refer https://github.com/drduh/macOS-Security-and-Privacy-Guide
 
@@ -18,9 +18,9 @@ _Lookes like it's the one you'll really need to keep in order to get updates aut
 
 ## `captiveagent`
 
-A captive portal is a network that forces an HTTP client to see a special web page (usually for authentication purposes) before using the Internet normally. A captive portal turns a Web browser into an authentication device. These are commonly used on wifi networks where authentication to the private network is done via a login browser page, rather than via the use of a WEP or WPA2 key, for example in some coffee shops and airports
+A captive portal is a network that forces an HTTP client to see a special web page (usually for authentication purposes) before using the Internet normally. A captive portal turns a Web browser into an authentication device. These are commonly used on wifi networks where authentication to the private network is done via a login browser page, rather than via the use of a WEP or WPA2 key, for example in some coffee shops and airports.
 
-On Apple devices, if a captive portal is identified, a special application in `/System/Library/CoreServices` called `Captive Network Assistant.app` is opened. This is a very limited browser, separate to Safari, with no address bar or navigation buttons
+On Apple devices, if a captive portal is identified, a special application in `/System/Library/CoreServices` called `Captive Network Assistant.app` is opened. This is a very limited browser, separate to Safari, with no address bar or navigation buttons.
 
 https://grpugh.wordpress.com/2014/10/29/an-undocumented-change-to-captive-network-assistant-settings-in-os-x-10-10-yosemite/
 
@@ -33,9 +33,9 @@ _Pretty nice example of how the things are messed up nowadays. I disabled it on 
 
 _Looks like for now nobody is sure what it is:_
 
-`ckkeyrolld` is the system daemon that rolls and verifies encryption metadata
+`ckkeyrolld` is the system daemon that rolls and verifies encryption metadata.
 
-No clue about what these metadata really are and why they need to be shared with Apple
+No clue about what these metadata really are and why they need to be shared with Apple.
 
 `ckkeyrolld.plist` is related to iCloud encryption I believe.
 
@@ -43,7 +43,7 @@ https://www.reddit.com/r/MacOS/comments/7au0tv/what_is_ckkeyrolld/
 
 https://twitter.com/icleus/status/943087366436282370
 
-_Soundes like a creepy crap to be disabled. At least if you are not using iCloud (I do not)_
+_Soundes like a creepy crap to be disabled. At least if you are not using iCloud (I do not)._
 
 
 ## `com.apple.Safari.SafeBrowsing.Service`
@@ -62,9 +62,10 @@ _Suspicious is that MAC OS sometimes calls the service while Safari is off. But 
 Obviously this framework is something to do with Apple's Game Centre, which I've only previously come across on iOS. What is it now doing on OSX, given that there seems to be no GUI 'front-end' for it? And how the **** do I disable it?
 
 https://discussions.apple.com/message/23567732
+
 https://apple.stackexchange.com/questions/223331/how-to-disable-game-center-process-gamed-on-os-x-10-11-el-capitan
 
-_Obviously to be blocked or turned off if you don't use Game Center_
+_Definitely to be blocked or turned off if you don't use Game Center_
 
 
 ## `geod.xpc`
@@ -73,7 +74,7 @@ It looks like this service is entirely related to Location Services. Blocking it
 
 https://discussions.apple.com/thread/7353115
 
-`Locationd` is a daemon that provides location services for OS X's "Core Location". This uses skyhook technology to figure out your mac's location (using WiFi). It's the same system used by the iPod Touch, and is also used by the iPhone (The iPhone also uses cell tower triangulation and GPS)
+`Locationd` is a daemon that provides location services for OS X's "Core Location". This uses skyhook technology to figure out your mac's location (using WiFi). It's the same system used by the iPod Touch, and is also used by the iPhone (The iPhone also uses cell tower triangulation and GPS).
 
 https://discussions.apple.com/thread/2141988
 
