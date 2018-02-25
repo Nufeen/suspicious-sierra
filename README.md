@@ -16,32 +16,6 @@ https://apple.stackexchange.com/questions/240108/what-is-the-akd-process-and-do-
 _Lookes like it's the one you'll really need to keep in order to get updates automatically._
 
 
-## `mappushd`
-
-Location Services allows applications and websites to gather and use information based on the current location of your computer.
-
-Your approximate location is determined using information from local Wi-Fi networks, and is collected by Location Services in a manner that doesn’t personally identify you.
-
-https://support.apple.com/en-us/HT204690
-
-https://support.apple.com/en-gb/HT207092
-
-_The part of Location services. Related to weather, timezones and so on. Can be disabled on desktops. The only real use of them is Find My Mac functionality on macbooks._
-
-
-## `geod.xpc`
-
-It looks like this service is entirely related to Location Services. Blocking it with Little Snitch (as I have done) and/or disabling it with the launchctl command, will render Location Services inoperable. About the only down side I see to that (for my own usage scenario) is loss of the Find My Mac functionality. Otherwise, I've got no particular reason for apps and system services to be utilising my location. People who travel (across timezones) may find that automatic updating of their timezone and clock will fail.
-
-https://discussions.apple.com/thread/7353115
-
-`Locationd` is a daemon that provides location services for OS X's "Core Location". This uses skyhook technology to figure out your mac's location (using WiFi). It's the same system used by the iPod Touch, and is also used by the iPhone (The iPhone also uses cell tower triangulation and GPS)
-
-https://discussions.apple.com/thread/2141988
-
-_Location Services can be turned off in System Settings (and is actually recommended for the desktops, since you'll hardly ever need them). In my case that didn's stop geod.xpc activity though._
-
-
 ## `captiveagent`
 
 A captive portal is a network that forces an HTTP client to see a special web page (usually for authentication purposes) before using the Internet normally. A captive portal turns a Web browser into an authentication device. These are commonly used on wifi networks where authentication to the private network is done via a login browser page, rather than via the use of a WEP or WPA2 key, for example in some coffee shops and airports
@@ -91,3 +65,29 @@ https://discussions.apple.com/message/23567732
 https://apple.stackexchange.com/questions/223331/how-to-disable-game-center-process-gamed-on-os-x-10-11-el-capitan
 
 _Obviously to be blocked or turned off if you don't use Game Center_
+
+
+## `geod.xpc`
+
+It looks like this service is entirely related to Location Services. Blocking it with Little Snitch (as I have done) and/or disabling it with the launchctl command, will render Location Services inoperable. About the only down side I see to that (for my own usage scenario) is loss of the Find My Mac functionality. Otherwise, I've got no particular reason for apps and system services to be utilising my location. People who travel (across timezones) may find that automatic updating of their timezone and clock will fail.
+
+https://discussions.apple.com/thread/7353115
+
+`Locationd` is a daemon that provides location services for OS X's "Core Location". This uses skyhook technology to figure out your mac's location (using WiFi). It's the same system used by the iPod Touch, and is also used by the iPhone (The iPhone also uses cell tower triangulation and GPS)
+
+https://discussions.apple.com/thread/2141988
+
+_Location Services can be turned off in System Settings (and is actually recommended for the desktops, since you'll hardly ever need them). In my case that didn's stop geod.xpc activity though._
+
+
+## `mappushd`
+
+Location Services allows applications and websites to gather and use information based on the current location of your computer.
+
+Your approximate location is determined using information from local Wi-Fi networks, and is collected by Location Services in a manner that doesn’t personally identify you.
+
+https://support.apple.com/en-us/HT204690
+
+https://support.apple.com/en-gb/HT207092
+
+_The part of Location services. Related to weather, timezones and so on. Can be disabled on desktops. The only real use of them is Find My Mac functionality on macbooks._
