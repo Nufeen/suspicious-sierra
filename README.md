@@ -81,3 +81,13 @@ Google is constantly updating this database, so your iDevice refreshes on every 
 https://apple.stackexchange.com/questions/101556/what-is-safari-safe-browsing-data-and-why-does-it-need-to-copy-every-time-i-sync
 
 _Suspicious is that MAC OS sometimes calls the service while Safari is off. But overall it is a useful one._
+
+
+## gamed
+
+Obviously this framework is something to do with Apple's Game Centre, which I've only previously come across on iOS. What is it now doing on OSX, given that there seems to be no GUI 'front-end' for it? And how the **** do I disable it?
+
+https://discussions.apple.com/message/23567732
+https://apple.stackexchange.com/questions/223331/how-to-disable-game-center-process-gamed-on-os-x-10-11-el-capitan
+
+_Obviously to be blocked or turned off if you don't use Game Center_
