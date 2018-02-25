@@ -4,6 +4,8 @@ This is a tiny investigation of suspisious Mac OS Sierra connections reported by
 
 This document covers only recent network activity, for the detailed Mac OS security guide refer https://github.com/drduh/macOS-Security-and-Privacy-Guide
 
+This gist with shell script for just disabling everything is related, though I'd recommend to be very careful with it: https://gist.github.com/pwnsdx/d87b034c4c0210b988040ad2f85a68d3 
+
 
 ## `akd/gsa`
 
@@ -14,6 +16,15 @@ It is used to authenticate the App Store. App Store login fails if you block it.
 https://apple.stackexchange.com/questions/240108/what-is-the-akd-process-and-do-i-need-to-allow-it-to-connect-to-the-internet/247110
 
 _Lookes like it's the one you'll really need to keep in order to get updates automatically._
+
+
+## `apsd`
+
+That is the daemon which arbitrates push notifications and other cloud services.
+
+https://www.reddit.com/r/mac/comments/2uris4/disable_apsd_to_speed_up_your_mac/
+
+_Note: `aspd` rule is protected by Little Snitch (they consider it important enough for correct system functionality)._
 
 
 ## `captiveagent`
@@ -54,10 +65,10 @@ Google is constantly updating this database, so your iDevice refreshes on every 
 
 https://apple.stackexchange.com/questions/101556/what-is-safari-safe-browsing-data-and-why-does-it-need-to-copy-every-time-i-sync
 
-_Suspicious is that MAC OS sometimes calls the service while Safari is off. But overall it is a useful one._
+_Suspicious is that OSX sometimes calls the service while Safari is off. But overall this is a useful one._
 
 
-## gamed
+## `gamed`
 
 Obviously this framework is something to do with Apple's Game Centre, which I've only previously come across on iOS. What is it now doing on OSX, given that there seems to be no GUI 'front-end' for it? And how the **** do I disable it?
 
@@ -65,7 +76,7 @@ https://discussions.apple.com/message/23567732
 
 https://apple.stackexchange.com/questions/223331/how-to-disable-game-center-process-gamed-on-os-x-10-11-el-capitan
 
-_Definitely to be blocked or turned off if you don't use Game Center_
+_Definitely to be blocked or turned off._
 
 
 ## `geod.xpc`
@@ -79,6 +90,24 @@ https://discussions.apple.com/thread/7353115
 https://discussions.apple.com/thread/2141988
 
 _Location Services can be turned off in System Settings (and is actually recommended for the desktops, since you'll hardly ever need them). In my case that didn's stop geod.xpc activity though._
+
+
+## `helpd`
+
+`helpd` is the daemon that's running on your mac that gives you access to the help files when you open a program.
+
+https://discussions.apple.com/thread/3930621
+
+_I turn this thing off since it tries to reach remote servers when I do not ask for any kind of help._
+
+
+## `ksfetch`
+
+_Not an Apple service, but you'll probably encounter it. Useful one. Frequency of update checks is adjustable, see the link below._ 
+
+The `ksfetch` process on OS X is part of Google Chrome's update mechanism. The ks prefix is an abbreviation of Keystone. The process appears to be responsible for fetching updates to Google's products.
+
+https://apple.stackexchange.com/questions/207998/what-is-ksfetch-process-on-mac
 
 
 ## `mappushd`
