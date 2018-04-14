@@ -98,7 +98,7 @@ https://apple.stackexchange.com/questions/223331/how-to-disable-game-center-proc
 
 _Definitely to be blocked or turned off._
 
-#### possible way to disable: 
+### possible way to disable: 
 
 In system settings, you have the panel with the notification center. I removed the game center from there. Hope it helps!
 
@@ -125,6 +125,8 @@ Even if you were to process all the geo location aspects on developer.apple.com 
 * Safari location
 
 https://apple.stackexchange.com/questions/201839/services-using-com-apple-geod
+
+### possible way to disable: 
 
 _Location Services can be turned off in System Settings (and is actually recommended for the desktops, since you'll hardly ever need them). In my case that didn's stop geod.xpc activity though._
 
@@ -161,6 +163,14 @@ _The part of Location services. Related to weather, timezones and so on. Can be 
 
 ## `parsecd`
 
+`parsecd` itself is an unknown network service (possibly related to security) which is run every 10 minutes approximately.
+
+https://eclecticlight.co/2017/05/31/an-incomplete-list-of-sierras-dispatched-services/
+
+Is this the service that sends all of my pasteboard content to Apple?
+
+https://www.reddit.com/r/mac/comments/54870l/what_is_comappleparsecd/
+
 `parsecd` is a macOS system process that is used for suggestions in Spotlight, Messages, Lookup and Safari (_Little Snitch info_)
 
 But what the heck does `parsecd` actually do? 
@@ -172,12 +182,3 @@ I now see a Siri entry that’s checked but greyed out. I suspected that was bec
 Guess I’ll just have to block connections with LS to silence the cunning little witch.
 
 https://apple.stackexchange.com/questions/266989/what-is-parsecd
-
-`parsecd` itself is an unknown network service (possibly related to security) which is run every 10 minutes approximately.
-
-https://eclecticlight.co/2017/05/31/an-incomplete-list-of-sierras-dispatched-services/
-
-Is this the service that sends all of my pasteboard content to Apple?
-
-https://www.reddit.com/r/mac/comments/54870l/what_is_comappleparsecd/
-
