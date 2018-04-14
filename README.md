@@ -6,6 +6,26 @@ This document covers only recent network activity, for the detailed Mac OS secur
 
 This gist with shell script for just disabling everything is related, though I'd recommend to be very careful with it: https://gist.github.com/pwnsdx/d87b034c4c0210b988040ad2f85a68d3 
 
+### Some interesting commands to know:
+
+To see all the agents: 
+
+`ls /System/Library/LaunchAgents/`
+
+Util to operate them is called `launchctl`. To get info about certain service: 
+
+`launchctl list com.apple.whatever`
+
+Latest Mac OS versions include the System Integrity Protection feature, that is controlled by `csrutil` util. 
+
+By default it restricts unloading system agents without turning it off, so most `launchctl unload` commands in old privacy guides will just fail with the following error: `Operation not permitted while System Integrity Protection is engaged`
+
+Stopping certain deamon in current session is not restricted though:
+
+`sudo launchctl stop com.apple.whatever`
+
+You can disable SIP on your own risk, details here: https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/ConfiguringSystemIntegrityProtection/ConfiguringSystemIntegrityProtection.html
+
 
 ## `akd/gsa`
 
@@ -15,7 +35,7 @@ It is used to authenticate the App Store. App Store login fails if you block it.
 
 https://apple.stackexchange.com/questions/240108/what-is-the-akd-process-and-do-i-need-to-allow-it-to-connect-to-the-internet/247110
 
-_Lookes like it's the one you'll really need to keep in order to get updates automatically._
+_Looks like it's the one you'll really need to keep in order to get updates automatically._
 
 
 ## `apsd`
@@ -78,6 +98,9 @@ https://apple.stackexchange.com/questions/223331/how-to-disable-game-center-proc
 
 _Definitely to be blocked or turned off._
 
+#### possible way to disable: 
+
+In system settings, you have the panel with the notification center. I removed the game center from there. Hope it helps!
 
 ## `geod.xpc`
 
@@ -88,6 +111,20 @@ https://discussions.apple.com/thread/7353115
 `Locationd` is a daemon that provides location services for OS X's "Core Location". This uses skyhook technology to figure out your mac's location (using WiFi). It's the same system used by the iPod Touch, and is also used by the iPhone (The iPhone also uses cell tower triangulation and GPS).
 
 https://discussions.apple.com/thread/2141988
+
+Even if you were to process all the geo location aspects on developer.apple.com - it's widely used - far greater than just the Core Location API - https://developer.apple.com/documentation/corelocation.
+
+* Weather
+* Calendar
+* Address Book
+* Maps
+* Siri
+* iCloud (finding the best data center to route uploads)
+* Store (which geographic region should your content be)
+* Time Zone and Night Shift
+* Safari location
+
+https://apple.stackexchange.com/questions/201839/services-using-com-apple-geod
 
 _Location Services can be turned off in System Settings (and is actually recommended for the desktops, since you'll hardly ever need them). In my case that didn's stop geod.xpc activity though._
 
@@ -121,3 +158,26 @@ https://support.apple.com/en-us/HT204690
 https://support.apple.com/en-gb/HT207092
 
 _The part of Location services. Related to weather, timezones and so on. Can be disabled on desktops. The only real use of them is Find My Mac functionality on macbooks._
+
+## `parsecd`
+
+`parsecd` is a macOS system process that is used for suggestions in Spotlight, Messages, Lookup and Safari (_Little Snitch info_)
+
+But what the heck does `parsecd` actually do? 
+
+It is location-based suggestions for Siri
+
+I now see a Siri entry that’s checked but greyed out. I suspected that was because she was disabled so I reenabled her. But her location service is still checked and grayed out - no way to disable it!
+
+Guess I’ll just have to block connections with LS to silence the cunning little witch.
+
+https://apple.stackexchange.com/questions/266989/what-is-parsecd
+
+`parsecd` itself is an unknown network service (possibly related to security) which is run every 10 minutes approximately.
+
+https://eclecticlight.co/2017/05/31/an-incomplete-list-of-sierras-dispatched-services/
+
+Is this the service that sends all of my pasteboard content to Apple?
+
+https://www.reddit.com/r/mac/comments/54870l/what_is_comappleparsecd/
+
