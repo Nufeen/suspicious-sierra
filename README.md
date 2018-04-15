@@ -1,24 +1,20 @@
 # SUSPICIOUS SIERRA CONNECTIONS
 
-This is a tiny investigation of suspisious Mac OS Sierra connections reported by Little Snitch, each section consists of quotes from the discussions in corresponding links. My own comments are marked with _italic_.
+This is a tiny investigation of suspisious Mac OS Sierra connections reported by Little Snitch (commonly abbreviated as `LS` in current context), each section consists of quotes from the discussions in corresponding links. My own comments are marked with _italic_.
 
 This document covers only recent network activity, for the detailed Mac OS security guide refer https://github.com/drduh/macOS-Security-and-Privacy-Guide
 
 This gist with shell script for just disabling everything is related, though I'd recommend to be very careful with it: https://gist.github.com/pwnsdx/d87b034c4c0210b988040ad2f85a68d3 
 
-### Some interesting commands to know:
+### Few things to know:
 
-To see all the agents: 
+To get the list of agents you can run: `ls /System/Library/LaunchAgents/`
 
-`ls /System/Library/LaunchAgents/`
+Utility to operate them is called `launchctl`. To get info about certain service: `launchctl list com.apple.whatever`
 
-Util to operate them is called `launchctl`. To get info about certain service: 
+Latest Mac OS versions include the System Integrity Protection (SIP) feature, that is controlled by `csrutil` util. 
 
-`launchctl list com.apple.whatever`
-
-Latest Mac OS versions include the System Integrity Protection feature, that is controlled by `csrutil` util. 
-
-By default it restricts unloading system agents without turning it off, so most `launchctl unload` commands in old privacy guides will just fail with the following error: `Operation not permitted while System Integrity Protection is engaged`
+By default it restricts unloading system agents, so most `launchctl unload` commands in old (pre-Maverics) privacy guides will just fail with the following error: `Operation not permitted while System Integrity Protection is engaged`
 
 Stopping certain deamon in current session is not restricted though:
 
@@ -161,6 +157,16 @@ https://support.apple.com/en-gb/HT207092
 
 _The part of Location services. Related to weather, timezones and so on. Can be disabled on desktops. The only real use of them is Find My Mac functionality on macbooks._
 
+## `nbagent`
+
+Noticeboard agent is a macOS system process. As part of Apple’s software update mechanism it is connecting to Apple’s servers. (_LS version_)
+
+`nbagent` is used for website notifications that show up in notification center
+
+https://discussions.apple.com/thread/6445084
+
+_Still not sure what it is. What is noticeboard? Why does it need a special agent to connect apple servers? Just disabled it._
+
 ## `parsecd`
 
 `parsecd` itself is an unknown network service (possibly related to security) which is run every 10 minutes approximately.
@@ -182,3 +188,13 @@ I now see a Siri entry that’s checked but greyed out. I suspected that was bec
 Guess I’ll just have to block connections with LS to silence the cunning little witch.
 
 https://apple.stackexchange.com/questions/266989/what-is-parsecd
+
+## `touristd`
+
+It can display different Apple tours depending on OS and device. You can try to run `/System/Library/PrivateFrameworks/Tourist.framework/Versions/A/Resources/touristd --help` to get some hint.
+
+https://apple.stackexchange.com/questions/294291/what-is-touristd
+
+Details: 
+
+https://carlashley.com/2016/10/19/com-apple-touristd/
