@@ -138,15 +138,15 @@ _I turn this thing off since it tries to reach remote servers when I do not ask 
 
 ## `imagent`
 
-imagent is part of Apple's Messages app (formerly iChat). (LS)
+`imagent` is part of Apple's Messages app (formerly iChat). (_LS info_)
 
-IMAgent is a process that listens for FaceTime invitations. It will be active even if FaceTime isn't running. You don't have to block it, but if you don't use FaceTime you can open the application, open preferences, and turn off FaceTime. That should quit the IMAgent process.
+`IMAgent` is a process that listens for FaceTime invitations. It will be active even if FaceTime isn't running. You don't have to block it, but if you don't use FaceTime you can open the application, open preferences, and turn off FaceTime. That should quit the IMAgent process.
 
 https://apple.stackexchange.com/questions/86814/firewall-settings-with-imagent
 
-imagent memory leak in Mountain Lion: https://discussions.apple.com/thread/4209012?tstart=0
+`imagent` memory leak in Mountain Lion: https://discussions.apple.com/thread/4209012?tstart=0
 
-_Tries to reach `init-p01md.apple.com` with no reason, when iChat/FaceTime/etc are off_
+_Tries to reach `init-p01md.apple.com` with no reason, when iChat/FaceTime/etc are off._
 
 
 ## `ksfetch`
