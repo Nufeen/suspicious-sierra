@@ -53,7 +53,7 @@ https://grpugh.wordpress.com/2014/10/29/an-undocumented-change-to-captive-networ
 
 https://apple.stackexchange.com/questions/45418/how-to-automatically-login-to-captive-portals-on-os-x
 
-_Pretty nice example of how the things are messed up nowadays. I disabled it on a wi-fi connected computer and it seemes to be fine, but looks that's the thing to be accurate with, since wrong settings may cause problems with connecting to your own wi-fi networks._
+_Pretty nice example of how things are messed up nowadays. I disabled it on a wi-fi connected computer and it seemes to be fine, but looks that's the thing to be accurate with, since wrong settings may cause problems with connecting to your own wi-fi networks._
 
 
 ## `ckkeyrolld`
@@ -134,6 +134,19 @@ _Location Services can be turned off in System Settings (and is actually recomme
 https://discussions.apple.com/thread/3930621
 
 _I turn this thing off since it tries to reach remote servers when I do not ask for any kind of help._
+
+
+## `imagent`
+
+imagent is part of Apple's Messages app (formerly iChat). (LS)
+
+IMAgent is a process that listens for FaceTime invitations. It will be active even if FaceTime isn't running. You don't have to block it, but if you don't use FaceTime you can open the application, open preferences, and turn off FaceTime. That should quit the IMAgent process.
+
+https://apple.stackexchange.com/questions/86814/firewall-settings-with-imagent
+
+imagent memory leak in Mountain Lion: https://discussions.apple.com/thread/4209012?tstart=0
+
+_Tries to reach `init-p01md.apple.com` with no reason, when iChat/FaceTime/etc are off_
 
 
 ## `ksfetch`
